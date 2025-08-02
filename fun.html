@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="favcon2.ico" type="image/x-icon" id="favicon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ebebeb;
+            height: 100vh;
+            margin: 0;
+        }
+
+		.header {
+			font-size: 5.5em;
+            font-weight: bold;
+		}
+		
+        p:first-of-type {
+            font-size: 3em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        p:last-of-type {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .idea {
+            background-color: #ececec;
+            color: #000000;
+            font-size: 1.4em;
+            border: 0.5px solid #000000;
+            transition: box-shadow 0.6s;
+        }
+
+        .idea:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            width: 175px;
+            margin-bottom: 20px;
+            height: 175px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.6s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button img {
+            width: 75%;
+            border-radius: 10px;
+        }
+
+        .button span {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+		.subtitle {
+			text-align: center;
+            margin: 20px 0 20px 0;
+		}
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        function makeSuggestion() {
+            emailjs.init("mYgB6uUAmsfq0Dp8n");
+            let uSuggestion = prompt("Enter your suggestion:");
+            
+            if (!uSuggestion) {
+                window.alert("You cancelled the suggestion :(");
+                return;
+            }
+
+            const templateParams = {
+                suggestion: uSuggestion, 
+            };
+
+            emailjs.send('service_kgyvm6o', 'template_gvdpvfs', templateParams)
+                .then(response => {
+                    window.alert("The suggestion was sent successfully! Check \"Suggestions etc.\" for the status and if it got accepted.");
+                    console.log("EmailJS response:", response);
+                })
+                .catch(error => {
+                    console.error("EmailJS error:", JSON.stringify(error));
+                    window.alert(`Failed to send suggestion. Please try again later.\n\n${JSON.stringify(error)}`);
+                });
+        }
+    </script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'e') {
+                document.title = "Leibniz Formula for π - Math Geeks";
+                document.getElementById('favicon').href = 'favicon.ico';
+            } else if (event.key === 'q') {
+                window.location.href.replace("https://classroom.google.com");
+            }
+        });
+
+        function openURL(URL) {
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = URL;
+            win.document.body.appendChild(iframe);
+        }
+
+        function openGame(num) {
+            switch(num) {
+                case 1:
+                    openURL("https://rpicpu.dev/lumenxs/dino")
+                    return
+                case 2: 
+                    openURL("https://devjakob.webs.vc/launcher")
+                    return
+                case 3: 
+                    openURL("https://rpicpu.dev/why/slope")
+                    return
+                case 4: 
+                    openURL("https://triep.io")
+                    return
+                case 5: 
+                    openURL("https://synthx.cc")
+                    return
+                case 6: 
+                    openURL("https://vole.wtf")
+                    return
+                case 7: 
+                    openURL("https://kartbros.io")
+                    return
+                case 8: 
+                    openURL("https://rpicpu.dev/why")
+                    return
+                default:
+                    return
+            }
+        }
+
+        function alerts() {
+            let cupdate = localStorage.getItem("update");
+            let lupdate = 1;
+            let lupdatemsg = "Latest News:\n"+"LumenXs (previously H4ck1ngH4ck3r) is BACK!!!\nThis will now be updated weekly, with news from me directly displayed here, and exploits and gaming sites added"
+            if (!cupdate || cupdate != lupdate) {
+                alert(lupdatemsg);
+                localStorage.setItem("update", lupdate);
+            }
+        }
+
+        window.onload = alerts();
+    </script>
+</head>
+<body>
+    <div class="header">LumenXs</div>
+
+    <div class="container">
+        <a href="https://rpicpu.dev/lumenxs/dino" class="button" target="_blank" onclick="openGame(1)">
+            <img src="images/dino.png" alt="Chrome Dino!!!">
+            <span>Chrome Dino!!!</span>
+        </a>
+
+        <a href="https://devjakob.webs.vc/launcher" class="button" target="_blank" onclick="openGame(2)">
+            <img src="images/mc.png" alt="Eaglercraft">
+            <span>Eaglercraft</span>
+        </a>
+
+        <a href="https://rpicpu.dev/why/slope" class="button" target="_blank" onclick="openGame(3)">
+            <img src="images/slope.png" alt="Slope">
+            <span>Slope</span>
+        </a>
+
+        <a href="https://triep.io" class="button" target="_blank" onclick="openGame(4)">
+            <img src="images/triep.png" alt="Triep">
+            <span>Triep.io</span>
+        </a>
+
+        <a href="https://synthx.cc" class="button" target="_blank" onclick="openGame(5)">
+            <img src="images/synthx.png" alt="Synthx">
+            <span>Synthx.cc</span>
+        </a>
+
+        <a href="https://vole.wtf" class="button" target="_blank" onclick="openGame(6)">
+            <img src="images/vole.jpeg" alt="Vole">
+            <span>Vole.wtf</span>
+        </a>
+
+        <a href="https://kartbros.io" class="button" target="_blank" onclick="openGame(7)">
+            <img src="images/kartbros.png" alt="Kart Bros">
+            <span>Kart Bros</span>
+        </a>
+		
+        <a href="https://rpicpu.dev/why" class="button" target="_blank" onclick="openGame(8)">
+            <img src="images/bidoofery.png" alt="Bidoofery">
+            <span>Bidoofery</span>
+        </a>
+
+        <a href="https://neal.fun" class="button" target="_blank">
+            <img src="images/neal.png" alt="neal.fun">
+            <span>neal.fun</span>
+        </a>
+
+		<a href="https://rpicpu.dev/lumenxs/dev" class="button" target="_blank">
+             <img src="images/404-glitch.png" alt="DEVS ONLY">
+             <span>DEVS ONLY</span>
+        </a>
+		
+        <a href="https://rpicpu.dev/lumenxs/dev-notes" class="button" target="_blank">
+            <img src="images/404-glitch.png" alt="Suggestions etc.">
+            <span>Suggestions etc.</span>
+        </a>
+		
+        <a href="https://rpicpu.dev/chat" class="button" target="_blank">
+            <img src="images/chat.png" alt="Chat">
+            <span>Chat</span>
+        </a>
+    </div>
+
+    <button class="idea" onclick="makeSuggestion()">Suggest an idea, website or update</button>
+
+    <div class="subtitle">V1.12<br><a href="https://rpicpu.dev/lumenxs/wiki">Wiki - all the info to know</a><br><b>Reborn!</b></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DEV NOTES</title>
+  <style>
+    body {
+      background-color: #000000;
+      font-size: 2em;
+    }
+
+    .header {
+      color: #0e6b0e;
+    }
+
+    .main {
+      color: #13a10b;
+      cursor: pointer;
+    }
+    
+    h2 {
+      font-weight: normal;
+    }
+  </style>
+  <script>
+    function openURL() {
+      var win = window.open();
+      var iframe = win.document.createElement('iframe');
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      iframe.src = URL;
+      win.document.body.appendChild(iframe);
+    }
+
+    function suggestions() {
+      openURL("https://rpicpu.dev/lumenxs/sug")
+    }
+
+    function info() {
+      openURL("https://lumenoxs.github.io/dev-notes/info")
+    }
+  </script>
+</head>
+<body>
+  <h1 class="header" title="test">Developer Notes</h1>
+  <span class="main" onclick="suggestions()">[SUGGESTIONS]</div> &nbsp;&nbsp;⟵⎯⎯
+  <span class="main" onclick="info()"><br>[INFO]</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⟵⎯⎯
+  
+</body>
+</html>
