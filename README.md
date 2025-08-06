@@ -1,4 +1,4 @@
-# LumenXs - The "UnEducational" Site<br>
+# LumenXs<br>
 <br>
 Welcome to <b>LumenXs</b>, a lightweight hub designed for unblocked games, cool sites, dev tools, and community features.<br>
 <br>
