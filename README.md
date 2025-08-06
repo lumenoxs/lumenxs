@@ -1,13 +1,5 @@
-# Lumenoxs
-Tutorial<br>
+# LumenXs - The "UnEducational" Site<br>
 <br>
--Fork this, it should show near the top right<br>
--Change "index.html" by looking thorugh and changing the parts where it says to update them by:<br>
-&emsp;  -Entering the website url or "ENTER YOUR WEBSITE NAME HERE":<br>
-&emsp; &emsp;   -"Your Github Username".github.io/"The Project Name"<br>
--Go to settings at the top/above<br>
--Click pages<br>
--Click the dropdown and select main<br>
--Wait<br>
--Enter the website URL or:<br>
- &emsp; -"Your Github Username".github.io/"The Project Name"<br>
+Welcome to <b>LumenXs</b>, a lightweight hub designed for unblocked games, cool sites, dev tools, and community features.<br>
+<br>
+Formerly known as <b>H4ck1ngH4ck3r</b> — now reborn as <b>LumenXs</b>!
